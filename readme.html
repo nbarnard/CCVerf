@@ -1,15 +1,19 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<body>
-<center><font size=+3>CCVerf</font></center>
 
-<p><font size=+1>What CCVerf is:</font>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="ICBM" content="47.589744, -122.315836" />
+<title>CCVerf</title>
+</head>
+<body>
+<p /><h2 class="title">What CCVerf is:</h2>
 <ul>
 <li>
 CCVerf is a ANSI C function that checks the mathamatical accuracy of
 major credit card numbers.</li>
 </ul>
-<font size=+1>What CCVerf does:</font>
+<h2 class="title">What CCVerf does:</h2>
 <ul>
 <li>
 Check the mathematical accuracy of the card number against the MOD10 algorithm.</li>
@@ -18,7 +22,7 @@ Check the mathematical accuracy of the card number against the MOD10 algorithm.<
 Check if the card number fits the format for the brand of the credit card.
 (i.e. Visa, Master Card, American Express and Discover)</li>
 </ul>
-<font size=+1>What CCVerf does not do:</font>
+<h2 class="title">What CCVerf does not do:</h2>
 <ul>
 <li>
 Check the actual validly of a card number with a bank.</li>
@@ -29,7 +33,7 @@ Check the balance available on the card number in question.</li>
 <li>
 Check the expiration date of the card number in question.</li>
 </ul>
-<font size=+1>Why CCVerf is useful:</font>
+<h2 class="title">Why CCVerf is useful:</h2>
 <ul>
 <li>
 Reduce verification costs related to per verification costs, or related
@@ -46,20 +50,18 @@ invalid.</li>
 <li>
 Is just an interesting study in basic security and structure methods.</li>
 </ul>
-<font size=+1>What CCVerf accepts at its arguments (inputs):</font>
+<h2 class="title">What CCVerf accepts at its arguments (inputs):</h2>
 <ul>
 <li>
 A string, which is accessed via pointer, which contains the card number
-in question.&nbsp; This string may contain extraneous non numerical characters,
+in question. This string may contain extraneous non numerical characters,
 that CCVerf will ignore.</li>
 
 <li>
 A integer between one and four, which corresponds to the card type, as
-stated by the chart below:</li>
-</ul>
+stated by the chart below:
 
-<ul>&nbsp;
-<table BORDER=0 CELLSPACING=5 CELLPADDING=0 >
+<table border="" cellspacing="0" cellpadding="4">
 <tr>
 <td>Integer Input</td>
 
@@ -67,65 +69,66 @@ stated by the chart below:</li>
 </tr>
 
 <tr>
-<td ALIGN=RIGHT>1 -&nbsp;</td>
+<td align="right">1 -</td>
 
 <td>Visa</td>
 </tr>
 
 <tr>
-<td ALIGN=RIGHT>2 -&nbsp;</td>
+<td align="right">2 -</td>
 
 <td>Master Card</td>
 </tr>
 
 <tr>
-<td ALIGN=RIGHT>3 -&nbsp;</td>
+<td align="right">3 -</td>
 
 <td>American Express/Diner's Club</td>
 </tr>
 
 <tr>
-<td ALIGN=RIGHT>4 -&nbsp;</td>
+<td align="right">4 -</td>
 
 <td>Discover</td>
 </tr>
 </table>
+</li>
 </ul>
-<font size=+1>How CCVerf checks the credit card number:</font>
+<h2 class="title">How CCVerf checks the credit card number:</h2>
 <ul>
 <li>
 First, CCVerf strips out all the non numeric characters and checks the
-number of digits.&nbsp; If number of digits isn't 13, 15, or 16 it rejects
+number of digits. If number of digits isn't 13, 15, or 16 it rejects
 the card.</li>
 
 <li>
-Second, CCVerf checks the length of the number versus the type.&nbsp; Visa
-cards numbers must be 13 or 16 digits.&nbsp; American Express card numbers
-must be 15 digits.&nbsp; Master Card and Discover card numbers must be
+Second, CCVerf checks the length of the number versus the type. Visa
+cards numbers must be 13 or 16 digits. American Express card numbers
+must be 15 digits. Master Card and Discover card numbers must be
 16 digits.</li>
 
 <li>
-Third, CCVerf checks the first digit of the card number versus the type.&nbsp;
-American Express card numbers must start with '3'.&nbsp; Visa card numbers
-must start with '4'.&nbsp; Master Card numbers must start with '5'.&nbsp;
+Third, CCVerf checks the first digit of the card number versus the type.
+American Express card numbers must start with '3'. Visa card numbers
+must start with '4'. Master Card numbers must start with '5'.
 Discover card numbers must start with '6'.</li>
 
 <li>
 Finally, CCVerf checks the card number versus the MOD10 algorithm. The
 MOD10 algorithm works by utilizing a single digit doubling system on every
 other digit starting on the first digit on sixteen digit cards, and on
-the second digit on thirteen and fifteen digit cards.&nbsp;&nbsp; [i.e.
-five doubles into one. (5x2 = 10, 1+0=1)&nbsp; Eight doubles into seven.&nbsp;
-(8x2=16, 1+6=7)&nbsp; Four doubles into eight. (4x2=8, 0+8=8)]&nbsp; Next,
+the second digit on thirteen and fifteen digit cards. [i.e.
+five doubles into one. (5x2 = 10, 1+0=1) Eight doubles into seven.
+(8x2=16, 1+6=7) Four doubles into eight. (4x2=8, 0+8=8)] Next,
 the MOD10 algorithm adds the resulting doubled digits together and verifies
 the result is divisible by ten.</li>
 </ul>
-<font size=+1>An example of how CCVerf checks the credit card number:</font>
-<br>The string "4191-0600-2310-2329" and the integer '1' is passed to CCVerf.&nbsp;
+<h2 class="title">An example of how CCVerf checks the credit card number:</h2>
+<br />The string "4791-0600-2310-2329" and the integer '1' is passed to CCVerf.
 CCVerf starts by pulling all of the numerical digits out of the string
 and placing them in a array, represented by following table:
-<br>&nbsp;
-<table BORDER CELLSPACING=0 CELLPADDING=4 >
+<br />
+<table border="" cellspacing="0" cellpadding="4">
 <tr>
 <td>Array Position</td>
 
@@ -199,15 +202,15 @@ and placing them in a array, represented by following table:
 </tr>
 </table>
 
-<p>CCVerf first checks and sees that the length of the card is sixteen
-digits, an acceptable length for a card number.&nbsp; It then checks the
+<p />CCVerf first checks and sees that the length of the card is sixteen
+digits, an acceptable length for a card number. It then checks the
 digit in array position zero and confirms that the first digit is four,
-since this card was reported as a Visa.&nbsp; CCVerf then doubles every
+since this card was reported as a Visa. CCVerf then doubles every
 other digit of the array starting at the 00 array position and replaces
-the original digit with the doubled digit.&nbsp; Leaving the array in the
+the original digit with the doubled digit. Leaving the array in the
 following state:
-<br>&nbsp;
-<table BORDER CELLSPACING=0 CELLPADDING=4 >
+<br /> 
+<table border="" cellspacing="0" cellpadding="4">
 <tr>
 <td>Array Position</td>
 
@@ -281,25 +284,35 @@ following state:
 </tr>
 </table>
 
-<p>When the digits are added the total is sixty, since sixty is divisible
+<p />When the digits are added the total is sixty, since sixty is divisible
 by ten, and the card has passed all the other requirements the card is
 considered valid.
-<p><font size=+1>Where to get CCVerf:</font>
+<p /><h2 class="title">Where to get CCVerf:</h2>
 <ul>
 <li>
-CCVerf is available from my website at&nbsp; <a href="http://www.dnaco.net/~nickb/ccverf/ccverf.c">http://www.dnaco.net/~nickb/ccverf/ccverf.c</a>
-it is only 3k.&nbsp; To my knowledge this is the only place to obtain CCVerf.</li>
+CCVerf is available from my website at <a href="/ccverf/ccverf.tar.gz">http://www.inmff.net/ccverf/ccverf.tar.gz</a> [10k]. To my knowledge this is the only place to obtain CCVerf.</li>
 </ul>
-<font size=+1>How to contact CCVerf's author:</font>
+<h2 class="title">License:</h2>
 <ul>
 <li>
-Nicholas Barnard may be contacted at nickb@pobox.com or via his <a href="http://www.dnaco.net/~nickb/mailme.html">website
+CCVerf is released under the <a href="http://www.gnu.org/copyleft/lesser.html">GNU Lesser General Public License</a>.
+</li>
+</ul>
+<h2 class="title">How to contact CCVerf's author:</h2>
+<ul>
+<li>
+Nicholas Barnard may be contacted via his <a href="/mailme.html">website
 form</a>.</li>
 </ul>
-<div align="right"><HR><A HREF="http://www.dnaco.net/~nickb/">Return to my homepage</A>
-<BR><BR><FONT SIZE="-1">
-This page was last updated on Thursday, April 19, 2001 at 11:07 PM EDT.
-<BR>This page was created by Nicholas Barnard.  Please feel free to <A HREF="http://www.dnaco.net/~nickb/mailme.html">email me</a> with any comments.
-</FONT></div>
+
+
+<br />This page was last updated on Wednesday, October 24, 2007 at 06:20 PM EDT.
+
 </body>
 </html>
+
+
+
+
+ 
+
